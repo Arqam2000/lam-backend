@@ -52,7 +52,35 @@ const getAllReviews = async (req, res) => {
     }
 }
 
+const getReviews = async (req, res) => {
+    try {
+       let data = [
+        {
+            cr: 1, 
+            rdate: "27/08/2025", 
+            cname: "Muhammad Ahmed", 
+            designation: "Engineer", 
+            comment: "This is a testing message.", 
+            crate: 3
+        }
+       ]
+
+        return res.status(200).json({
+            success: true,
+            message: "Successfuly fetched reviews",
+            data
+        })
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            message: "Cannot fetched reviews",
+            error
+        })
+    }
+}
+
 export {
     addReview,
-    getAllReviews
+    getAllReviews,
+    getReviews
 }
