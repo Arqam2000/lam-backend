@@ -4,7 +4,7 @@ import { addReview, getAllReviews, getReviews } from "../controllers/customer.co
 const router = Router()
 
 router.route("/add-review").post(addReview)
-// router.route("/get-reviews").get(getAllReviews)
-router.route("/get-reviews").get(getReviews)
+router.route("/get-reviews").get(getAllReviews)
+router.route("/reviews").get(getReviews)
 
 export default router
