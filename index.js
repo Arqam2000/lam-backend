@@ -1,11 +1,11 @@
 import express from "express";
-import cors from "cors"
+// import cors from "cors"
 const app = express()
 
 app.use(express.json())
-app.use(cors({
-    origin: ["https://lamaesthetic.co.uk"]
-}))
+// app.use(cors({
+//     origin: ["https://lamaesthetic.co.uk"]
+// }))
 
 import crRouter from "./src/routes/customer.routes.js"
 
