@@ -4,7 +4,7 @@ const app = express()
 
 app.use(express.json())
 app.use(cors({
-    origin: ["https://lamaesthetic.co.uk"]
+    origin: "*"
 }))
 
 import crRouter from "./src/routes/customer.routes.js"
