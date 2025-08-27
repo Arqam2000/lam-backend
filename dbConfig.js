@@ -6,7 +6,7 @@ export const pool = mysql.createPool({
   // password: '',
   // database: 'lamaesthetic'
 
-  host: 'db498.hstgr.io', // or your MySQL host
+  host: 'db498.hstgr.io:3306', // or your MySQL host
   user: 'u994158989_admin',
   password: 'Lamaesthetic123',
   database: 'u994158989_lamaesthetic'
