@@ -35,7 +35,7 @@ const addReview = async (req, res) => {
 
 const getAllReviews = async (req, res) => {
     try {
-        const [rows] = await pool.query("SELECT cr, rdate, cname, designation, comment, crate FROM creview")
+        const [rows] = await pool.query("SELECT cr, rdate, cname, designation, remarks, comment, crate FROM creview")
 
         console.log("rows",rows)
 
