@@ -2,16 +2,16 @@ import { pool } from '../../dbConfig.js'
 
 const addReview = async (req, res) => {
     try {
-        const { name, designation, comments, rating } = req.body
+        const { name, designation, remarks, comments, rating } = req.body
 
-        if (!name || !designation || !comments || !rating) {
+        if (!name || !designation || !remarks || !comments || !rating) {
             return res.status(400).json({
                 success: false,
                 message: "Please provide complete details"
             })
         }
 
-        const [result] = await pool.query("INSERT INTO creview (rdate, cname, designation, comment, crate) VALUES (NOW(), ?, ?, ?, ?)", [name, designation, comments, rating])
+        const [result] = await pool.query("INSERT INTO creview (rdate, cname, designation, remarks, comment, crate) VALUES (NOW(), ?, ?, ?, ?, ?)", [name, designation, remarks, comments, rating])
 
         if (result.affectedRows == 0) {
             return res.status(400).json({
