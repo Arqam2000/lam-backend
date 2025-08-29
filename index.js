@@ -11,6 +11,10 @@ import crRouter from "./src/routes/customer.routes.js"
 
 app.use("/api/v1/reviews", crRouter)
 
+import appointmentRouter from "./src/routes/appointment.routes.js";
+
+app.use("/api/v1/appointment", appointmentRouter)
+
 app.get("/", (req, res) => {
     return res.status(200).json({
         success: true,
