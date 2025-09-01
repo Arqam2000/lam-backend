@@ -39,7 +39,7 @@ const getAppointments = async (req, res) => {
         const [rows] = await pool.query("SELECT name, email, phone, bdate FROM Bappoint")
     
         console.log(rows[rows.length-1].bdate.toLocaleString())
-        console.log(typeof rows[0].bdate)
+        console.log(rows[rows.length-1].bdate)
         
         return res.status(200).json({
             success: true,
