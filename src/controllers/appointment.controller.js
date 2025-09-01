@@ -36,7 +36,7 @@ const bookAppointment = async (req, res) => {
 
 const getAppointments = async (req, res) => {
     try {
-        const [rows] = await pool.query("SELECT name, email, phone, bdate FROM Bappoint")
+        const [rows] = await pool.query("SELECT name, email, phone, bdate FROM Bappoint ORDER BY bdate DESC")
     
         console.log(rows[rows.length-1].bdate.toLocaleString())
         console.log(rows[rows.length-1].bdate)
