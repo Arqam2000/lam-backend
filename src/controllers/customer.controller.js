@@ -4,12 +4,12 @@ const addReview = async (req, res) => {
     try {
         const { name, designation, remarks, comments, rating } = req.body
 
-        if (!name || !designation || !remarks || !comments || !rating) {
-            return res.status(400).json({
-                success: false,
-                message: "Please provide complete details"
-            })
-        }
+        // if (!name || !designation || !remarks || !comments || !rating) {
+        //     return res.status(400).json({
+        //         success: false,
+        //         message: "Please provide complete details"
+        //     })
+        // }
 
         const [result] = await pool.query("INSERT INTO creview (rdate, cname, designation, remarks, comment, crate) VALUES (NOW(), ?, ?, ?, ?, ?)", [name, designation, remarks, comments, rating])
 
