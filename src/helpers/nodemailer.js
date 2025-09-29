@@ -16,9 +16,9 @@ export async function sendEmail(fullName, email, emailType, date) {
 
         const mailOptions = {
             from: 'admin@lamaesthetic.co.uk', // sender address
-            to: `arqamsarwar9@gmail.com, ${email}`, // list of receivers
+            to: `arqamsarwar9@gmail.com, ${email}, toobasharaf@aol.com`, // list of receivers
             subject: emailType === "Appointment" ? "Appointment" : "Contact", // Subject line
-            html: `<p style="font-size: 16px;"><span style="font-weight: bold;">${fullName}</span>  booked an appointment at <span style="font-weight: bold;">${date}</span></p>`, // html body
+            html: `<p style="font-size: 16px;"><span style="font-weight: bold;">${fullName}</span>  booked an appointment at <span style="font-weight: bold;">${date.split("T")[0]}</span> Time <span style="font-weight: bold;">${date.split("T")[1]}</span></p>`, // html body
         };
 
         const mailResponse = await transporter.sendMail(mailOptions);
